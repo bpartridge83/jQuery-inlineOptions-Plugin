@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+	<head> 
+		<meta charset="utf-8">
+		<title>inlineOptions jQuery Plugin</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="" />
+		
+		<link rel="stylesheet" href="styles.css" /
+		
+	</head>
+	<body>
+	
+        <form id="demo">
+	
+            <select name="tracking">
+                <option value="private">Private</option>
+                <option value="friends">Only My Friends</option>
+                <option value="everyone">Everyone</option>
+            </select>
+            
+            <br /><br />
+            
+            <button type="submit">Submit Form</button>
+        
+        </form>
+	   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script src="../inlineOptions.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        
+             $('select').inlineOptions({ speed: 100 });
+             
+             $('form').submit(function(){
+                $('<div />',{
+                    html: $(this).serialize(),
+                    css: {
+                        margin: '20px 0 0'
+                    }
+                }).appendTo($('body'));
+                return false;
+             });
+             
+        });
+        </script>
+	
+    </body>
+</html>
