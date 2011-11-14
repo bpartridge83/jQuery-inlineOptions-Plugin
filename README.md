@@ -1,4 +1,4 @@
-# Inline-Option jQuery Plugin
+# InlineOptions jQuery Plugin
 
 Creates inline tab/slider options from traditional `<select>` dropdowns.  When a tab is selected with the inline options, the value of the `<select>` is changed.
 
@@ -36,7 +36,7 @@ Just use the same HTML markup you would use to render a dropdown.
 ## jQuery
 
 ``` js
-$('select').inlineOption();
+$('select').inlineOptions();
 ```
 
 *****
@@ -46,7 +46,7 @@ $('select').inlineOption();
 You can customize the speed of the animation and the className rendered as the wrapping parent (for CSS styles).
 
 ``` js
-$('select').inlineOption({ speed: 500, className: 'narwhal' });
+$('select').inlineOptions({ speed: 500, className: 'narwhal' });
 ```
 
 ## Update on Manual `<select>` value change
