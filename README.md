@@ -66,7 +66,7 @@ $('select').inlineOptions({ speed: 500, className: 'narwhal' });
 ### Defaults
 
 * speed: `250` (250ms)
-* className: `iop` (for **i**nline-**o**ption-**p**lugin)
+* className: `iop` (for **i**nline-**o**ptions-**p**lugin)
 
 ## Update on Manual `<select>` value change
 
