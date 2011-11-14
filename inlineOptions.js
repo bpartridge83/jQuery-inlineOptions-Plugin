@@ -44,9 +44,11 @@
             $parent.find('.window').css({
                 height: $parent.height() + 'px'
             });
-            $parent.find('a').bind('click', function() {
-                $(this).closest('ul').find('select').val($(this).data('value'));
+            $parent.find('select').bind('change', function() {
                 $.fn.inlineOptions.update();
+            });
+            $parent.find('a').bind('click', function() {
+                $(this).closest('ul').find('select').val($(this).data('value')).trigger('change');
                 return false;
             });
         }
