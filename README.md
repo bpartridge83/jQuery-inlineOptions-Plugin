@@ -2,13 +2,17 @@
 
 Creates inline tab/slider options from traditional `<select>` dropdowns.  When a tab is selected with the inline options, the value of the `<select>` is changed.
 
-![Inline Selector Screenshot](http://f.cl.ly/items/2b0W3k2c1o0X3V262p32/Screen%20Shot%202011-11-13%20at%2010.22.43%20PM.png "Inline Selector Screenshot")
+[![Inline Selector Screenshot](http://f.cl.ly/items/2b0W3k2c1o0X3V262p32/Screen%20Shot%202011-11-13%20at%2010.22.43%20PM.png "Inline Selector Screenshot")](http://brianpartridge.com/lab/inline-selector/demo/)
 
 ####from
 
 ![Traditional Dropdown Screenshot](http://cl.ly/Bn4k/Screen%20Shot%202011-11-13%20at%2010.24.15%20PM.png "Traditional Dropdown Screenshot")
 
 Inspiration from [this Dribbble shot](http://dribbble.com/shots/313794-AppStack-GUI "AppStack GUI") by Joel Beukelman ([@joelbeukelman](https://twitter.com/joelbeukelman "Joel Buekelman on Twitter")).
+
+## Demo
+
+Might need to see this one to get a full understanding of what it does... [**Check out the demo here**](http://brianpartridge.com/lab/inline-selector/demo/ "Inline Selector jQuery Plugin Demo")! 
 
 ## Usage
 
