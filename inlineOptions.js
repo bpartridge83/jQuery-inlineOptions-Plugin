@@ -67,7 +67,6 @@
     $.fn.inlineOptions.update = function() {
         var animate = (arguments.length) ? arguments[0] : true,
             speed = (animate) ? $.fn.inlineOptions.options.speed : 10;
-        console.log(speed);
         $('.' + $.fn.inlineOptions.options.className).each(function() {
             var option = $(this).find('select option:selected'),
                 index = option.index(),
