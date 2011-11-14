@@ -16,8 +16,7 @@
         });
     };
     $.fn.inlineOptions.set = function(options) {
-        $.fn.inlineOptions.options = $.extend({}, $.fn.inlineOptions.defaults, options);
-        return $.fn.inlineOptions.options;
+        return $.extend({}, $.fn.inlineOptions.defaults, options);
     };
     $.fn.inlineOptions.create = function(el, options) {
         var $el = ($.type(el) === 'object') ? el : $(el);
@@ -30,6 +29,7 @@
         }
         var $parent = $el.parent(),
             $options = $el.find('option');
+        $parent.attr('data-iop', true).data('iop-options', opts);
         if (!$parent.find('small').length) {
             $parent.append('<span class="window"><span class="wrapper"></span></span>');
             for (var i = 0, arrLen = $options.length; i < arrLen; i += 1) {
@@ -45,14 +45,14 @@
                 height: $parent.height() + 'px'
             });
             $parent.find('select').bind('change', function() {
-                $.fn.inlineOptions.update();
+                $.fn.inlineOptions.update($(this).parent());
             });
             $parent.find('a').bind('click', function() {
                 $(this).closest('ul').find('select').val($(this).data('value')).trigger('change');
                 return false;
             });
         }
-        $.fn.inlineOptions.update(false);
+        $.fn.inlineOptions.update($parent, false);
         return $el;
     };
     $.fn.inlineOptions.destroy = function(el) {
@@ -62,15 +62,27 @@
         } else {
             $el = $('select');
         }
-        $el.parent().find('li, span').remove();
-        $el.unwrap();
-        return $el;
+        var opts = $(this).data('iop-options');
+        if ($el.parent().hasClass(opts.className)) {
+            $el.parent().find('li, span').remove();
+            $el.unwrap().unbind('change');
+            return $el;
+        } else {
+            return false;
+        }
     };
-    $.fn.inlineOptions.update = function() {
-        var animate = (arguments.length) ? arguments[0] : true,
-            speed = (animate) ? $.fn.inlineOptions.options.speed : 10;
-        $('.' + $.fn.inlineOptions.options.className).each(function() {
-            var option = $(this).find('select option:selected'),
+    $.fn.inlineOptions.update = function(el) {
+        var $el, args = arguments;
+        if (arguments.length) {
+            $el = ($.type(el) === 'object') ? el : $(el);
+        } else {
+            $el = $('[data-iop]');
+        }
+        $el.each(function() {
+            var opts = $(this).data('iop-options'),
+                animate = (args.length > 1) ? args[1] : opts.animate,
+                speed = (animate) ? opts.speed : 0,
+                option = $(this).find('select option:selected'),
                 index = option.index(),
                 $parent = option.closest('ul'),
                 $a = $parent.find('a').eq(index),
@@ -79,13 +91,15 @@
             $parent.find('.window').stop().animate({
                 width: width + 1,
                 left: left
-            }, speed).fadeIn(speed).find('.wrapper').stop().animate({
+            }, speed, opts.easing).fadeIn(speed).find('.wrapper').stop().animate({
                 left: -left + 2
-            }, speed);
+            }, speed, opts.easing);
         });
     };
     $.fn.inlineOptions.defaults = {
+        animate: true,
         speed: 250,
-        className: 'iop'
+        className: 'iop',
+        easing: 'swing'
     };
 })(jQuery);
