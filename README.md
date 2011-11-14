@@ -96,13 +96,14 @@ Once it's been installed, you can restore the original markup and dropdown inter
 ### for all `<select>` elements:
 
 ``` js
-$.fn.inlineOptions.destroy();
+$.fn.inlineOptions('destroy');
 ```
 
 ### for specific instances:
 
 ``` js
-$.fn.inlineOptions.destroy('select.this-one');
+$.fn.inlineOptions('destroy','select.this-one');
+$('select.that-one').inlineOptions('destroy');
 ```
 
 *****
