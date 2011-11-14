@@ -62,9 +62,10 @@
         } else {
             $el = $('select');
         }
-        var opts = $(this).data('iop-options');
-        if ($el.parent().hasClass(opts.className)) {
-            $el.parent().find('li, span').remove();
+        var $parent = $el.parent(),
+            opts = $parent.data('iop-options');
+        if ($parent.hasClass(opts.className)) {
+            $parent.find('li, span').remove();
             $el.unwrap().unbind('change');
             return $el;
         } else {
