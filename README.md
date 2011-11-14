@@ -60,12 +60,14 @@ $('select').inlineOptions();
 You can customize the speed of the animation and the className rendered as the wrapping parent (for CSS styles).
 
 ``` js
-$('select').inlineOptions({ speed: 500, className: 'narwhal' });
+$('select').inlineOptions({ animate: true, speed: 250, easing: 'swing', className: 'iop' });
 ```
 
 ### Defaults
 
+* animate: `true`
 * speed: `250` (250ms)
+* easing: `swing`
 * className: `iop` (for **i**nline-**o**ptions-**p**lugin)
 
 ## Update on Manual `<select>` value change
