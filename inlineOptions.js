@@ -12,6 +12,9 @@
     'use strict';
     $.fn.inlineOptions = function(options) {
         return this.each(function() {
+            if (!options) {
+                options = $(this).data('iop');
+            }
             $.fn.inlineOptions.create($(this), options);
         });
     };

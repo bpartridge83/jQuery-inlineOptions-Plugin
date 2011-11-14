@@ -26,7 +26,7 @@
             
             <h3>No Animation</h3>
             
-            <select name="no-animate" class="no-animate">
+            <select name="no-animate" class="no-animate" data-iop='{"animate":false}'>
                 <option value="private">Private</option>
                 <option value="friends">Only My Friends</option>
                 <option value="everyone">Everyone</option>
@@ -67,9 +67,7 @@
                 animate: true
             });
             
-            $('select.no-animate').inlineOptions({
-                animate: false
-            });
+            $('select.no-animate').inlineOptions();
             
             $('select.slow').inlineOptions({
                 speed: 5000

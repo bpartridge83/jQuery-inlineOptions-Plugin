@@ -63,6 +63,17 @@ You can customize the speed of the animation and the className rendered as the w
 $('select').inlineOptions({ animate: true, speed: 250, easing: 'swing', className: 'iop' });
 ```
 
+*****
+
+You can also attach a custom `data-iop` attribute to the `<select>` element with a JSON list of options.
+``` html
+<select data-iop='{"speed":"500","easing":"linear"}'>
+```
+
+This would make it easier to set `<select>`-specific options and call the plugin globally, with `$('[data-iop]').inlineOptions();`;
+
+*****
+
 ### Defaults
 
 * animate: `true`
