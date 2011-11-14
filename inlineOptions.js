@@ -1,6 +1,6 @@
 /*!
  * jQuery inlineOptions Plugin
- * Version: 0.0.1
+ * Version: 0.1.0
  * URL: http://github.com/bpartridg83/jQuery-inlineOptions-Plugin
  * Description: Transforms <select> options to inline links
  * Requires: jQuery 1.4+
