@@ -22,8 +22,12 @@
         return $.extend({}, $.fn.inlineOptions.defaults, options);
     };
     $.fn.inlineOptions.create = function(el, options) {
-        var $el = ($.type(el) === 'object') ? el : $(el);
-        var opts = $.fn.inlineOptions.set(options);
+        var $el, opts = $.fn.inlineOptions.set(options);
+        try {
+            var $el = ($.type(el) === 'object') ? el : $(el);
+        } catch (e) {
+            var $el = $('select');
+        }
         if (!$el.parent().hasClass(opts.className)) {
             var $temp = $('<ul />', {
                 'class': opts.className
@@ -59,11 +63,10 @@
         return $el;
     };
     $.fn.inlineOptions.destroy = function(el) {
-        var $el;
-        if (arguments.length) {
-            $el = ($.type(el) === 'object') ? el : $(el);
-        } else {
-            $el = $('select');
+        try {
+            var $el = ($.type(el) === 'object') ? el : $(el);
+        } catch (e) {
+            var $el = $('select');
         }
         var $parent = $el.parent(),
             opts = $parent.data('iop-options');
