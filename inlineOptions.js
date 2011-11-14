@@ -67,6 +67,7 @@
     $.fn.inlineOptions.update = function() {
         var animate = (arguments.length) ? arguments[0] : true,
             speed = (animate) ? $.fn.inlineOptions.options.speed : 10;
+        console.log(speed);
         $('.' + $.fn.inlineOptions.options.className).each(function() {
             var option = $(this).find('select option:selected'),
                 index = option.index(),
@@ -74,16 +75,16 @@
                 $a = $parent.find('a').eq(index),
                 width = $a.outerWidth(),
                 left = $a.position().left;
-            $parent.find('.window').animate({
+            $parent.find('.window').stop().animate({
                 width: width + 1,
                 left: left
-            }, speed).fadeIn(speed).find('.wrapper').animate({
+            }, speed).fadeIn(speed).find('.wrapper').stop().animate({
                 left: -left + 2
             }, speed);
         });
     };
     $.fn.inlineOptions.defaults = {
-        speed: 1000,
+        speed: 250,
         className: 'iop'
     };
 })(jQuery);
