@@ -6,7 +6,7 @@ Creates inline tab/slider options from traditional `<select>` dropdowns.  When a
 
 ####from
 
-![Traditional Dropdown Screenshot](http://cl.ly/Bn4k/Screen%20Shot%202011-11-13%20at%2010.24.15%20PM.png "Traditional Dropdown Screenshot")
+![Traditional Dropdown Screenshot](http://f.cl.ly/items/2Z1A3J1W1N1m0E2e272w/Screen%20Shot%202011-11-13%20at%2010.24.15%20PM.png "Traditional Dropdown Screenshot")
 
 Inspiration from [this Dribbble shot](http://dribbble.com/shots/313794-AppStack-GUI "AppStack GUI") by Joel Beukelman ([@joelbeukelman](https://twitter.com/joelbeukelman "Joel Buekelman on Twitter")).
 
