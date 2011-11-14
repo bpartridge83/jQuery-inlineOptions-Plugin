@@ -27,13 +27,15 @@
         </form>
 	   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="../inlineOptions.min.js"></script>
+        <script src="../inlineOptions.js"></script>
         <script type="text/javascript">
         $(function(){
         
-             $('select').inlineOptions({ speed: 100 });
+            $('select').inlineOptions({ speed: 2500 });
              
-             $('form').submit(function(){
+            //$.fn.inlineOptions.create('select',{ speed: 250 });
+             
+            $('form').submit(function(){
                 $('<div />',{
                     html: $(this).serialize(),
                     css: {
@@ -41,7 +43,7 @@
                     }
                 }).appendTo($('body'));
                 return false;
-             });
+            });
              
         });
         </script>
