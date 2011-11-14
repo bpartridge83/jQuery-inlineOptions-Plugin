@@ -17,7 +17,7 @@ Might need to see this one to get a full understanding of what it does... [**Che
 ## Usage
 
 1. Render traditional `<select></select>` dropdown markup.
-2. Call $('select').inlineOptions(); on a jQuery object (with any/all select objects you want to transform)
+2. Call `$('select').inlineOptions();` on a jQuery object (with any/all select objects you want to transform)
 3. Include default CSS to style the appended markup
 4. Enjoy non-dropdown life.
 
