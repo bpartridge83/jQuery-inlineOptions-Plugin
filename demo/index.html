@@ -34,7 +34,7 @@
             
             <br /><br />
             
-            <h3>Really-Slow Animation <small>(5 Seconds)</small></h3>
+            <h3>Really-Slow Animation <small>(3 Seconds)</small></h3>
             
             <select name="slow" class="slow">
                 <option value="private">Private</option>
@@ -59,7 +59,7 @@
         </form>
 	   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="../inlineOptions.js"></script>
+        <script src="../inlineOptions.min.js"></script>
         <script type="text/javascript">
         $(function(){
         
@@ -70,7 +70,7 @@
             $('select.no-animate').inlineOptions();
             
             $('select.slow').inlineOptions({
-                speed: 5000
+                speed: 3000
             });
             
             $('select.linear').inlineOptions({
