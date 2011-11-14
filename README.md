@@ -39,7 +39,21 @@ Just use the same HTML markup you would use to render a dropdown.
 $('select').inlineOptions();
 ```
 
-*****
+## Markup Generated
+
+``` html
+<ul class="iop">
+  <select> ... </select>
+  <li><a href="#option-1">Label 1</a></li>
+  <li><a href="#option-2">Label 2</a></li>
+  <li><a href="#option-3">Label 3</a></li>
+  <span class="window"><span class="wrapper">
+    <small>Label 1</small>
+    <small>Label 2</small>
+    <small>Label 3</small>
+  </span></span>
+</ul>
+```
 
 ## Optional Configuration
 
@@ -48,6 +62,11 @@ You can customize the speed of the animation and the className rendered as the w
 ``` js
 $('select').inlineOptions({ speed: 500, className: 'narwhal' });
 ```
+
+### Defaults
+
+* speed: `250` (250ms)
+* className: `iop` (for **i**nline-**o**ption-**p**lugin)
 
 ## Update on Manual `<select>` value change
 
