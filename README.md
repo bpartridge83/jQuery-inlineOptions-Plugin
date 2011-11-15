@@ -106,10 +106,12 @@ $.fn.inlineOptions('destroy','select.this-one');
 $('select.that-one').inlineOptions('destroy');
 ```
 
-*****
-
 ## Support
 
 Currently tested only on Firefox and Chrome on Mac OS X
 
 Feel free to add bugs to the [Issues](https://github.com/bpartridge83/jQuery-inlineOptions-Plugin/issues) list, I'll get to them as soon as possible.
+
+## Acknowledgements
+
+Thanks to Luke Stebner ([github.com/lstebner](https://github.com/lstebner), [@ahhsumx](http://twitter.com/ahhsumx)) for direction and tips on jQuery plugin namespacing
